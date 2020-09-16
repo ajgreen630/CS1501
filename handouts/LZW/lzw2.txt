@@ -1,0 +1,48 @@
+CS 1501
+Lempel-Ziv Welch Decoding
+
+Trace of table insertions and output strings for the decoding
+of the encoded file produced by the handout lzw.txt.  Note that
+in this case, even though the dictionary will contain the same 
+data, it will this time be accessed using the code as the key
+value (whereas in the encoding the string was the key value).  Also
+note that the new (string, code) pairs are added to the dictionary
+a step later than they were in encoding.  This can be a problem in
+some cases (as we will discuss).
+
+Initially: insert codes 0..255 into the dictionary for each possible
+           8-bit sequence.  For strings, this amounts to the values
+           in the extended ASCII sequence.
+
+STEP    INPUT CODE      OUTPUT STRING     ADD to Dictionary (CODE #)
+----    ----------      -------------     --------------------------
+1     83 (ASCII('S'))       'S'                     ---
+2     69 (ASCII('E'))       'E'                 'SE' (256)
+3     69 (ASCII('E'))       'E'                 'EE' (257)
+4     32 (ASCII(' '))       ' '                 'E ' (258)
+5     83 (ASCII('S'))       'S'                 ' S' (259)
+6     80 (ASCII('P'))       'P'                 'SP' (260)
+7     79 (ASCII('O'))       'O'                 'PO' (261)
+8     84 (ASCII('T'))       'T'                 'OT' (262)
+9     32 (ASCII(' '))       ' '                 'T ' (263)
+10    82 (ASCII('R'))       'R'                 ' R' (264)
+11    85 (ASCII('U'))       'U'                 'RU' (265)
+12    78 (ASCII('N'))       'N'                 'UN' (266)
+13    46 (ASCII('.'))       '.'                 'N.' (267)
+14         264              ' R'                '. ' (268)
+15         266              'UN'                ' RU' (269)
+16         259              ' S'                'UN ' (270)
+17         261              'PO'                ' SP' (271)
+18         263              'T '                'POT' (272)
+19         265              'RU'                'T R' (273)
+20         267              'N.'                'RUN' (274)
+21         269              ' RU'               'N. ' (275)
+22    78 (ASCII('N'))       'N'                 ' RUN' (276)
+23         276              ' RUN'              'N ' (277)
+24         271              ' SP'               ' RUN ' (278)
+25         262              'OT'                ' SPO' (279)
+26         268              '. '                'OT.' (280)
+27         274              'RUN'               '. R' (281)
+28         278              ' RUN '             'RUN ' (282)
+29         274              'RUN'               ' RUN R' (283)
+30    46 (ASCII('.'))       '.'                      ---

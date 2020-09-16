@@ -1,0 +1,74 @@
+CS 1501
+Lempel Ziv Welch Compression
+
+Demonstration of the case during LZW compression that causes us some
+thought during decompression.  This case stems from the fact that the
+LZW compression algorithm inserts new strings into the dictionary in
+the same step that the strings were generated, while the decompression
+algorithm must wait until the next step to do this (see lzw.txt and
+lzw2.txt).
+
+Encode the string: AAAAAAAAAA
+
+STEP    MATCH           OUTPUT            ADD to Dictionary (CODE #)
+----   -------        ----------          --------------------------
+ 1       'A'        65 (ASCII('A'))               'AA' (256)
+ 2       'AA'            256                      'AAA' (257)
+ 3       'AAA'           257                      'AAAA' (258)
+ 4       'AAAA'          258                       ---
+
+The case shown is where the new code generated in step i is immediate-
+ly used in step i+1, and occurs in each of steps 2, 3 and 4.
+
+Decode the encoded file
+
+STEP    INPUT CODE      OUTPUT STRING       ADD to Dictionary (CODE #)
+----    ----------      -------------       --------------------------
+ 1    65 (ASCII('A'))        'A'                      ----
+ 2         256                ?                        
+
+Note that when decoding, we see code 256 before we have added it to 
+the dictionary.  It seems like we are stuck, but in reality we are
+not. The only case where this situation occurs is in the one described
+above (generally speaking -- repetition of the same character is not
+the only way this case occurs).  Thus, we can figure out what the 
+string must be.  It is the string from the previous step followed by
+the first character of the string from the previous step.  So now we
+can decode correctly.
+
+Decode the encoded file
+
+STEP    INPUT CODE      OUTPUT STRING       ADD to Dictionary (CODE #)
+----    ----------      -------------       --------------------------
+ 1    65 (ASCII('A'))       'A'                      ----
+ 2         256           'A' + 'A'                   'AA' (256)
+ 3         257           'AA' + 'A'                  'AAA' (257)
+ 4         258           'AAA' + 'A'                 'AAAA' (258)
+
+Let's try another example:
+
+Encode the string: AND BANANAS
+
+STEP    MATCH           OUTPUT            ADD to Dictionary (CODE #)
+----   -------        ----------          --------------------------
+ 1       'A'        65 (ASCII('A'))               'AN' (256)
+ 2       'N'        78 (ASCII('N'))               'ND' (257)
+ 3       'D'        68 (ASCII('D'))               'D ' (258)
+ 4       ' '        32 (ASCII(' '))               ' B' (259)
+ 5       'B'        66 (ASCII('B'))               'BA' (260)
+ 6       'AN'           256                       'ANA' (261)
+ 7       'ANA'          261                       'ANAS' (262)
+ 8       'S'            83                          ---
+
+Decode the encoded file:
+
+STEP    INPUT CODE      OUTPUT STRING       ADD to Dictionary (CODE #)
+----    ----------      -------------       --------------------------
+ 1    65 (ASCII('A'))       'A'                      ----
+ 2    78 (ASCII('N'))       'N'                   'AN' (256)
+ 3    68 (ASCII('D'))       'D'                   'ND' (257)
+ 4    32 (ASCII(' '))       ' '                   'D ' (258)
+ 5    66 (ASCII('B'))       'B'                   ' B' (259)
+ 6        256               'AN'                  'BA' (260)
+ 7        261            'AN' + 'A'               'ANA' (261)
+ 8    83 (ASCII('S'))       'S'                     ---

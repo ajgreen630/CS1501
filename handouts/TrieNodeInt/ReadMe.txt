@@ -1,0 +1,2 @@
+This trie is implemented in a package called TriePackage. To access this, place the interface, node and trie classes in a directory called TriePackage which is a level below the directory where the main program (DictTestForInterface) is stored. If you compile the main program normally it should compile the trie classes automatically.  For more information on Java packages see:
+https://docs.oracle.com/javase/tutorial/java/package/index.html

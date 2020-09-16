@@ -1,0 +1,43 @@
+CS 1501
+Lempel-Ziv Welch Encoding
+
+Trace of table insertions and output codes for the input string:
+
+SEE SPOT RUN. RUN SPOT RUN. RUN RUN SPOT. RUN RUN RUN.
+
+Initially: insert codes 0..255 into the dictionary for each possible
+           8-bit sequence.  For strings, this amounts to the values 
+           in the extended ASCII sequence.
+
+STEP    MATCH           OUTPUT            ADD to Dictionary (CODE #)
+----   -------        ----------          --------------------------
+1       'S'           83 (ASCII('S'))       'SE' (256)
+2       'E'           69 (ASCII('E'))       'EE' (257)
+3       'E'           69 (ASCII('E'))       'E ' (258)
+4       ' '           32 (ASCII(' '))       ' S' (259)
+5       'S'           83 (ASCII('S'))       'SP' (260)
+6       'P'           80 (ASCII('P'))       'PO' (261)
+7       'O'           79 (ASCII('O'))       'OT' (262)
+8       'T'           84 (ASCII('T'))       'T ' (263)
+9       ' '           32 (ASCII(' '))       ' R' (264)
+10      'R'           82 (ASCII('R'))       'RU' (265)
+11      'U'           85 (ASCII('U'))       'UN' (266)
+12      'N'           78 (ASCII('N'))       'N.' (267)
+13      '.'           46 (ASCII('.'))       '. ' (268)
+14      ' R'             264                ' RU' (269)
+15      'UN'             266                'UN ' (270)
+16      ' S'             259                ' SP' (271)
+17      'PO'             261                'POT' (272)
+18      'T '             263                'T R' (273)
+19      'RU'             265                'RUN' (274)
+20      'N.'             267                'N. ' (275)
+21      ' RU'            269                ' RUN' (276)
+22      'N'           78 (ASCII('N'))       'N ' (277)
+23      ' RUN'           276                ' RUN ' (278)
+24      ' SP'            271                ' SPO' (279)
+25      'OT'             262                'OT.' (280)
+26      '. '             268                '. R' (281)
+27      'RUN'            274                'RUN ' (282)
+28      ' RUN '          278                ' RUN R' (283)
+29      'RUN'            274                'RUN.' (284)
+30      '.'           46 (ASCII('.'))            ---

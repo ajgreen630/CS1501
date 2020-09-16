@@ -1,0 +1,76 @@
+Script started on Tue Jun 20 16:24:10 2006
+unixs2 (1) comp > ls -l 
+total 16462
+-rw-------   1 177      OAKLAND   144896 Jun 20 16:04 NP_Complete_Problems.doc
+-rwx------   1 177      OAKLAND    69908 Jun 20 16:11 assig1a-06-3.html
+-rw-------   1 177      OAKLAND        0 Jun 20 16:24 compare.txt
+-rwxrwxrwx   1 177      OAKLAND   443904 Apr 11 13:02 confidence.xls
+-rwx------   1 177      OAKLAND   830464 Jun 20 16:02 cs1501.ppt
+-rwxrwxrwx   1 177      OAKLAND  1265152 Apr 20 13:02 cs1538.ppt
+-rwxrwxrwx   1 177      OAKLAND   880128 Nov 30  2005 cs401.ppt
+-rwx------   1 177      OAKLAND   122035 Jun 20 16:10 dict8.txt
+-rwx------   1 177      OAKLAND   236328 Jun 20 16:14 edit.exe
+-rw-------   1 177      OAKLAND     6278 Jun 20 16:09 flownew.cpp
+-rwx------   1 177      OAKLAND  1220703 Jun 20 16:12 large.txt
+-rw-------   1 177      OAKLAND    10170 Jun 20 16:07 lzw.cxx
+-rwx------   1 177      OAKLAND    57199 Jun 20 16:04 match.html
+-rwx------   1 177      OAKLAND     5740 Jun 20 16:08 subset.cpp
+-rwx------   1 177      OAKLAND   761054 Jun 20 16:16 tux-large.bmp
+-rwx------   1 177      OAKLAND   921654 Jun 20 16:13 wacky.bmp
+-rwx------   1 177      OAKLAND   157044 Jun 20 16:14 winnt256.bmp
+-rwx------   1 177      OAKLAND  1286328 Jun 20 16:12 words3.txt
+unixs2 (2) comp > pack large.txt
+pack: large.txt: 43.2% Compression
+unixs2 (3) comp > ls -l large.txt.z
+-rwx------   1 177      OAKLAND   692859 Jun 20 16:12 large.txt.z
+unixs2 (4) comp > unpack large.txt.z
+unpack: large.txt: unpacked
+unixs2 (5) comp > compress -v large.txt
+large.txt: Compression: 57.18% -- replaced with large.txt.Z
+unixs2 (6) comp > ls -l large.txt.Z
+-rwx------   1 177      OAKLAND   522673 Jun 20 16:12 large.txt.Z
+unixs2 (7) comp > uncompress large.txt.Z
+unixs2 (8) comp > gzip -v large.txt
+large.txt:	 59.6% -- replaced with large.txt.gz
+unixs2 (9) comp > ls -l large.txt.gz
+-rwx------   1 177      OAKLAND   492652 Jun 20 16:12 large.txt.gz
+unixs2 (10) comp > gunzip large.txt.gz
+unixs2 (11) comp > pack cs1538.ppt
+pack: cs1538.ppt: 41.3% Compression
+unixs2 (12) comp > ls -l cs1538.ppt.z
+-rwxrwxrwx   1 177      OAKLAND   742292 Apr 20 13:02 cs1538.ppt.z
+unixs2 (13) comp > unpack cs1538.ppt.z
+unpack: cs1538.ppt: unpacked
+unixs2 (14) comp > compress -v cs1538.ppt
+cs1538.ppt: Compression: 58.34% -- replaced with cs1538.ppt.Z
+unixs2 (15) comp > ls -l cs1538.ppt.Z
+-rwxrwxrwx   1 177      OAKLAND   527015 Apr 20 13:02 cs1538.ppt.Z
+unixs2 (16) comp > uncompress cs1538.ppt.Z
+unixs2 (17) comp > gzip -v cs1538.ppt
+cs1538.ppt:	 74.8% -- replaced with cs1538.ppt.gz
+unixs2 (18) comp > ls -l cs1538.ppt.gz
+-rwxrwxrwx   1 177      OAKLAND   318429 Apr 20 13:02 cs1538.ppt.gz
+unixs2 (19) comp > gunzip cs1538.ppt.gz
+unixs2 (23) comp > tar -cf all.tar *
+unixs2 (24) comp > ls -l all.tar
+-rw-------   1 177      OAKLAND  8432640 Jun 20 16:29 all.tar
+unixs2 (25) comp > pack all.tar
+pack: all.tar: 31.8% Compression
+unixs2 (26) comp > ls -l all.tar.z
+-rw-------   1 177      OAKLAND  5748215 Jun 20 16:29 all.tar.z
+unixs2 (27) comp > unpack all.tar.z
+unpack: all.tar: unpacked
+unixs2 (28) comp > compress -v all.tar
+all.tar: Compression: 64.82% -- replaced with all.tar.Z
+unixs2 (29) comp > ls -l all.tar.Z
+-rw-------   1 177      OAKLAND  2966403 Jun 20 16:29 all.tar.Z
+unixs2 (30) comp > uncompress all.tar.Z
+unixs2 (31) comp > gzip -v all.tar
+all.tar:	 75.4% -- replaced with all.tar.gz
+unixs2 (32) comp > ls -l all.tar.gz
+-rw-------   1 177      OAKLAND  2075378 Jun 20 16:29 all.tar.gz
+unixs2 (33) comp > gunzip all.tar.gz
+unixs2 (34) comp > exit
+exit
+
+script done on Tue Jun 20 16:30:54 2006
