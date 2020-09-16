@@ -1,0 +1,59 @@
+CS 1501 Assignment Information Sheet
+ 
+You must submit an information sheet with every assignment. It does not have to be
+this exact sheet but it should have all of the information shown here.  Also be 
+sure to submit all materials following the procedures described on the submission
+procedures page.
+
+Name:______________________________ Assignment #: ______________
+
+Lecture Day and Time: _________________________
+
+Program Due Date: _______________________
+
+Handed in Date: _______________________ 
+
+Source code file name(s):
+
+________________________________________________________________
+
+________________________________________________________________
+
+Other file name(s) (if relevant): ______________________________
+
+________________________________________________________________
+
+________________________________________________________________
+
+Does your program compile without error?: _____________ 
+
+If not, what is/are the error(s)?:
+
+________________________________________________________________
+
+________________________________________________________________
+
+________________________________________________________________
+
+Does your program run without error?: _____________ 
+
+If not, what is/are the error(s) and which parts of your program run correctly?:
+
+________________________________________________________________
+
+________________________________________________________________
+
+________________________________________________________________
+
+________________________________________________________________
+
+Additional comments (including problems and extra credit):
+
+________________________________________________________________
+
+________________________________________________________________
+
+________________________________________________________________
+ 
+________________________________________________________________
+ 
