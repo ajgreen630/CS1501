@@ -1,0 +1,94 @@
+
+assig2 > cat simple.txt
+got
+get
+gets
+by
+bye
+assig2 > java HybridTrieTest simple.txt copy.txt
+Please choose your trie type:
+0) Array based multiway trie nodes
+1) DLB trie nodes
+2) Hybrid trie (with both nodes
+2
+Testing get() method:
+abc is not in the dictionary
+abe is not in the dictionary
+abet is not in the dictionary
+abx is not in the dictionary
+ace is not in the dictionary
+acid is not in the dictionary
+hives is not in the dictionary
+iodin is not in the dictionary
+inval is not in the dictionary
+zoo is not in the dictionary
+zool is not in the dictionary
+zurich is not in the dictionary
+
+Testing searchPrefix() method:
+abc is not found
+abe is not found
+abet is not found
+abx is not found
+ace is not found
+acid is not found
+hives is not found
+iodin is not found
+inval is not found
+zoo is not found
+zool is not found
+zurich is not found
+
+Adding some new words...
+
+Size of the Trie is 540 bytes
+
+Distribution of the trie nodes by degree: 
+Degree: 0  Number: 7
+Degree: 1  Number: 15
+Degree: 2  Number: 2
+Degree: 3  Number: 0
+Degree: 4  Number: 0
+Degree: 5  Number: 1
+Degree: 6  Number: 0
+Degree: 7  Number: 0
+Degree: 8  Number: 0
+Degree: 9  Number: 0
+Degree: 10  Number: 0
+Degree: 11  Number: 0
+Degree: 12  Number: 0
+Degree: 13  Number: 0
+Degree: 14  Number: 0
+Degree: 15  Number: 0
+Degree: 16  Number: 0
+Degree: 17  Number: 0
+Degree: 18  Number: 0
+Degree: 19  Number: 0
+Degree: 20  Number: 0
+Degree: 21  Number: 0
+Degree: 22  Number: 0
+Degree: 23  Number: 0
+Degree: 24  Number: 0
+Degree: 25  Number: 0
+Degree: 26  Number: 0
+
+There were a total of 25 nodes in the trie
+
+The trie contains 0 MTAlphaNodes
+
+The trie contains 25 DLBNodes
+
+Saving trie back to a file (should be alpha)
+assig2 > 
+assig2 > cat copy.txt
+aaa
+aaaa
+by
+bye
+get
+gets
+got
+yzzz
+zaaa
+zzz
+zzzz

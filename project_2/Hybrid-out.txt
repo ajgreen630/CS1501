@@ -1,0 +1,76 @@
+[Note: revdict.txt is a dictionary in reverse order]
+
+assig2 > java HybridTrieTest revdict.txt copy.txt
+Please choose your trie type:
+0) Array based multiway trie nodes
+1) DLB trie nodes
+2) Hybrid trie (with both nodes
+2
+Testing get() method:
+abc is not in the dictionary
+abe is not in the dictionary
+abet is in the dictionary
+abx is not in the dictionary
+ace is in the dictionary
+acid is in the dictionary
+hives is in the dictionary
+iodin is not in the dictionary
+inval is not in the dictionary
+zoo is in the dictionary
+zool is not in the dictionary
+zurich is not in the dictionary
+
+Testing searchPrefix() method:
+abc is not found
+abe is a prefix
+abet is a word and prefix
+abx is not found
+ace is a word and prefix
+acid is a word and prefix
+hives is a word
+iodin is a prefix
+inval is a prefix
+zoo is a word and prefix
+zool is a prefix
+zurich is not found
+
+Adding some new words...
+
+Size of the Trie is 2985272 bytes
+
+Distribution of the trie nodes by degree: 
+Degree: 0  Number: 38531
+Degree: 1  Number: 76319
+Degree: 2  Number: 13346
+Degree: 3  Number: 4475
+Degree: 4  Number: 1608
+Degree: 5  Number: 753
+Degree: 6  Number: 368
+Degree: 7  Number: 200
+Degree: 8  Number: 147
+Degree: 9  Number: 85
+Degree: 10  Number: 72
+Degree: 11  Number: 39
+Degree: 12  Number: 31
+Degree: 13  Number: 39
+Degree: 14  Number: 26
+Degree: 15  Number: 8
+Degree: 16  Number: 18
+Degree: 17  Number: 10
+Degree: 18  Number: 11
+Degree: 19  Number: 13
+Degree: 20  Number: 11
+Degree: 21  Number: 2
+Degree: 22  Number: 1
+Degree: 23  Number: 5
+Degree: 24  Number: 1
+Degree: 25  Number: 2
+Degree: 26  Number: 2
+
+There were a total of 136123 nodes in the trie
+
+The trie contains 219 MTAlphaNodes
+
+The trie contains 135904 DLBNodes
+
+Saving trie back to a file (should be alpha)
